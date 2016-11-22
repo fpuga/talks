@@ -1,0 +1,388 @@
+<!doctype html>
+
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="reveal.js-3.3.0/css/reveal.css">
+        <link rel="stylesheet" href="reveal.js-3.3.0/css/theme/white.css">
+
+        <link rel="stylesheet" href="common.css">
+        <link rel="stylesheet" href="main.css">
+    </head>
+    <body>
+        <div class="reveal">
+    <div class="slides">
+        <section>
+            <h2>Jornadas de Cartografía Participativa</h2>
+            <p><small>(Visualización de información geográfica con CARTO)</small></p>
+            <p><small>(23 de Noviembre de 2016)</small></p>
+        </section>
+        <section>
+            <section>
+                <h2>Francisco Puga</h2>
+                    <ul class="nobullet font-50">
+                        <li>fpuga@icarto.es</li>
+                        <li>https://twitter.com/fpuga/<li>
+                        <li>http://conocimientoabierto.es</li>
+                        <li>https://github.com/fpuga</li>
+                    </ul>
+            </section>
+            <section>
+                  <img style="display:block; width:55%; margin:auto" src="media/logo_icarto.png">
+
+                  <ul style="padding-top: 15px;" class="nobullet font-50" >
+                    <li>http://icarto.es</li>
+                    <li>https://twitter.com/icarto/</li>
+                    <li>https://github.com/icarto</li>
+                  </ul>
+            </section>
+        </section>
+        <section>
+          <section>
+            <img width="75%" src="media/indice_tpdh.png" />
+          </section>
+          <section>
+            <iframe width='100%' height='520' frameborder='0' src='https://esfgalicia.carto.com/viz/2f8f9ba8-bc46-11e4-bb55-0e018d66dc29/embed_map' allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
+          </section>
+            <section>
+              <iframe src="https://player.vimeo.com/video/158006762?title=0&byline=0&portrait=0" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<p><a href="https://vimeo.com/158006762">Case study - BBVA</a> from <a href="https://vimeo.com/carto">CARTO</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+            </section>
+
+            <section>
+              <a href="https://www.washingtonpost.com/news/morning-mix/wp/2014/12/15/the-alcatraz-escapees-could-have-survived-and-this-interactive-model-proves-it/">Fuga de Alcatraz</a>
+            </section>
+        </section>
+
+        <section>
+          <ul>
+            <li>Mini recordatorio</li>
+            <li>Contexto (Software libre, Open Data, Información Geográfica, CARTO)</li>
+            <li>Nuestro primer mapa con CARTO</li>
+            <li>Principios de diseño cartográfico</li>
+            <li>Learning By Doing (Jugando con CARTO)</li>
+          </ul>
+        </section>
+
+        <section>
+          <section>
+            OSM no es un mapa.
+          </section>
+          <section>
+            <ul>
+              <li><strong>Una base de datos de información geográfica libre</strong></li>
+              <li>Una comunidad de usuarios</li>
+              <li>Un conjunto de tecnologías, aplicaciones y servicios</li>
+              <li>Una licencia para datos</li>
+              <li>Un mapa</li>
+            </ul>
+          </section>
+        </section>
+        <section>
+          <section>
+            <img src="media/emapic.png" />
+          </section>
+          <section>
+            <img src="media/emapic_cuestiones.png" />
+          </section>
+          <section>
+            <img src="media/emapic_respuestas.png" />
+          </section>
+        </section>
+        <section data-background-image="media/nube_de_palabras.png" data-background-size="contain">
+          <h2>CONTEXTO</h2>
+        </section>
+
+        <section>
+          <section>
+            SOFTWARE LIBRE
+            <p class="font-50">(Y selección tecnológica)</p>
+          </section>
+          <section>
+            ¿Qué es software?
+            <ul>
+              <li>Programa informático (código fuente): secuencia de instrucciones que un/a computador/a puede interpretar y ejecutar.</li>
+              <li>Receta gastronómica: secuencia de instrucciones que que nos permiten cocinar un plato</li>
+            </ul>
+          </section>
+          <section>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/FvLJ2JotttM" frameborder="0" allowfullscreen></iframe>
+          </section>
+
+          <section style="font-size:75%; text-align:left">
+    					<p>Un programa es software libre si los usuarios tienen básicamente
+    				cuatro tipos de libertades:</p>
+    				<ol>
+    					<li>Libertad para ejecutar el programa en cualquier sitio, con cualquier propósito y para	siempre.</li>
+    					<li>Libertad para estudiarlo y adaptarlo a las necesidades.</li>
+    					<li>Libertad de redistribución, permitiendo colaborar con otros usuarios.</li>
+    					<li>Libertad para mejorar el programa y publicar las mejoras.</li>
+    				</ol>
+          </section>
+          <section>
+  					<h5>Software Libre: Posesión o Alquiler</h5>
+  					<img src="media/posesion_o_alquiler.png">
+  					<aside class="notes">
+  					Utilizar un sistema operativo Windows o ArcGIS implica pagar para adquirirlo, pero este pago no confiere permiso para copiarlo, distribuirlo a otras personas
+  					o modificarlo. Cuando compramos un programa lo que estamos pagando es el permiso de uso,
+  					o, lo que es lo mismo, la licencia. Este tipo de programas se conoce como software
+  					propietario o privativo.
+  					</aside>
+  				</section>
+
+  				<section>
+  					<h5>Ventajas del Software Libre</h5>
+  					<ul style="font-size:75%; text-align:left">
+  						<li>Menor TCO (Total Cost Ownership). Coste a largo plazo y sostenibilidad.</li>
+  						<li>Facilidad para realizar adaptaciones que se adecúen a las particularidades locales</li>
+  						<li>Fomento a la creación de empresas locales que provean servicios</li>
+  						<li>Rápido ciclo de desarrollo. Continuas nuevas versiones que solucionan problemas y añaden funcionalidades.</li>
+  						<li>En general se trata de un software más seguro (menor incidencia de virus)</li>
+  						<li>Excelente herramienta de aprendizaje para programadores.</li>
+  						<li>Disponibilidad a largo plazo.</li>
+  						<li>Menor dependencia tecnológica.</li>
+  						<li>En general existe un mejor aprovechamiento de los recursos hardware de modo que no tengamos que estar invirtiendo en nuevos ordenadores continuamente.</li>
+  						<li>Adaptación a idiomas locales.</li>
+  					</ul>
+            <aside class="notes">
+              Evita el vendor lock in. Si en un determinado momento, los costes no parecen razonables o no tiene las funcionalidades que necesitamos podemos desarrollar o montarla nosotros mismos, o contratar a quien lo haga. Logicamente una plataforma tan compleja como CARTO no es fácil de desarrollar ni mantener, por lo que es difícil que no compense pagar por el servicio.
+            </aside>
+  				</section>
+        </section>
+
+        <section>
+          <section>
+            OPEN DATA
+            <a class="sourcecite" href="http://opendata.cloudbcn.cat/MULTI/es/what-is-open-data">Open Data y RISP</a>
+          </section>
+          <section>
+            <ul>
+              <li><a href="http://mappinggis.com/2012/05/datos-cartograficos/">Mapping GIS: Datos cartográficos</a></li>
+              <li><a href="http://freegisdata.rtwilson.com/">Free GIS Data</a></li>
+              <li><a href="http://gisgeography.com/best-free-gis-data-sources-raster-vector/">Best Free GIS Data Sources</a></li>
+              <li><a href="http://datos.gob.es/">Portal Open Data de España</a></li>
+              <li><a href="http://datos.fundacionctic.org/sandbox/catalog/faceted/">Public Datasets Catalog</a></li>
+              <li><a href="http://global.census.okfn.org/">Global Open Data Index</a></li>
+              <li><a href="http://data.worldbank.org/">World Bank Open Data</a></li>
+              <li><a href="http://hdr.undp.org/en/data">Human Development Data</a></li>
+            </ul>
+          </section>
+          <section>
+            LICENCIAS
+          </section>
+          <section>
+            <ul>
+              <li><a href="https://www.gnu.org/licenses/licenses.es.html">Licencias de Software</a></li>
+              <li><a href="https://creativecommons.org/choose/">Licencias de Documentos</a></li>
+              <li><a href="http://opendatacommons.org/licenses/">Licencias de Datos</a></li>
+            </ul>
+          </section>
+        </section>
+
+        <section data-external="tig.html"> </section>
+
+        <section>
+          <section>
+            VISUALIZACIÓN DE DATOS
+          </section>
+        </section>
+
+        <section>
+          <section>
+              CARTO - LA EMPRESA
+              <aside class="notes">
+                  Vizzuality hacía muchos proyectos de visualización de datos y creo la plataforma CartoDB para no reinventar la rueda cada vez.
+                  CartoDB se constituyo como empresa propia y hace poco se renombro a CARTO
+                  Ofrecen la plataforma CARTO como servicio, con cuentas gratuitas y de pago. La más barata 1500$ anuales
+                  Por los tiempos que se ahorran en desarrollo, mantenimiento y funcionalidades merece la pena.
+              </aside>
+          </section>
+          <section>
+            <img src="media/carto_round_b.png" />
+          </section>
+          <section>
+            <iframe src="https://player.vimeo.com/video/173098097" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<p><a href="https://vimeo.com/173098097">Sergio &Aacute;lvarez Leiva, Premi FPdGi Empresa 2016</a> from <a href="https://vimeo.com/fpdgi">Fundaci&oacute; Princesa de Girona</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+          </section>
+
+
+        <section>
+            CARTO - LA PLATAFORMA
+            <aside class="notes">
+                El Editor: La interfaz gráfica que permitía crear visualizaciones de mapas de forma sencilla.
+                La Engine: Además de la interfaz de usuario para hacer visualizaciones ofrecen funcionalidades para que los desarrolladores usen su sistema para hacer sus propias aplicaciones. También LDS, geocodificación, imagen satelital, ...
+            </aside>
+        </section>
+        <section>
+
+            <a href="https://carto.com/learn/guides/intro/migrating-from-carto-editor-to-carto-builder">Welcome to "The Builder"</a>
+            <aside class="notes">
+              El Editor estaba muy enfocado a crear mapas de manera sencilla. El Builder está más enfocado a la creación de dashboards
+            </aside>
+        </section>
+
+        <section>
+          <img src="media/pricing.png" />
+        </section>
+
+        <section>
+          <img src="media/carto_engine.png" />
+        </section>
+
+        <section>
+          <img src="media/carto_lds.png" />
+        </section>
+
+        <section>
+          <img src="media/carto_enterprise.png" />
+        </section>
+
+        <section>
+          PostgreSQL/PostGIS
+        </section>
+      </section>
+
+      <section>
+        <section>
+          Abrir una cuenta y visualizar el perfil público
+        </section>
+        <section>
+          Guías, Documentación y Blog
+        </section>
+
+        <section>
+          Datasets, Mapas y Capas
+        </section>
+
+        <section>
+          Importar datasets
+          <ul>
+            <li>Ficheros (shp, gpx, kml, csv, xls,..)</li>
+            <li>Data Library</li>
+            <li>Servicio Externo (Dropbox, Google Drive, ...)</li>
+            <li>Dataset vacío</li>
+          </ul>
+        </section>
+
+        <section>
+          Exportar
+          <ul>
+            <li>Datasets</li>
+            <li>Mapas</li>
+          </ul>
+        </section>
+
+        <section>
+          Editar datasets
+          <ul>
+            <li>Metadata (nombre, descripción, ...)</li>
+            <li>Añadir, Eliminar y Renombrar columnas</li>
+            <li>Añadir filas y modificar los datos</li>
+            <li><strong>Tipos de datos<strong>: <small>No todas las opciones disponibles para todos los tipos</small></li>
+            <li>Digitalizar nuevos elementos</li>
+            <li>Georeferenciar información <small>(export && import)</small></li>
+            <li>cartodb_id, the_geom, the_geom_webmercator</li>
+          </ul>
+        </section>
+
+        <section>
+          Mapas
+          <ul>
+            <li>Modificar los metadatos</li>
+            <li>Publicar mapas</li>
+            <li>Opciones del mapa</li>
+        </section>
+
+        <section>
+          Mapas - Basemap
+          <ul>
+            <li>¿Qué es?</li>
+            <li>Ejemplos de distintos mapas base</li>
+            <li>Etiquetas y Niveles de Zoom</li>
+        </section>
+
+        <section>
+          PopUps (y personalización html)
+        </section>
+
+        <section>
+          Widgets
+          <ul>
+            <li>Fórmula: Sobre valores númericos (conteo, media, máximo, ...)</li>
+            <li>Histograma: Número de ocurrencias de un determinado valor</li>
+            <li>Categorización: Filtrar datos en base a distintas categorías</li>
+            <li>Serie Temporal: Filtro en función del <em>tiempo</em> de un evento</li>
+          </ul>
+        </section>
+
+
+        <section>
+          Estilo de puntos, líneas y polígonos
+        </section>
+
+        <section>
+          Animando datos
+          <p><a href="https://kendavis.carto.com/tables/quakes_for_cdb/public">Fuente de datos</a>
+        </section>
+
+      </section>
+
+      <section>
+        <section>
+          PRÁCTICAS
+        </section>
+
+        <section>
+          Probar mapas base
+          <ul>
+            <li><a href="data/coruna_universidad.osm">data/coruna_universidad.osm</a></li>
+          </ul>
+        </section>
+
+        <section>
+          Comparar OSM con Catastro
+          <ul>
+            <li>WMS Catastro (Capa <em>CONSTRU</em>): http://ovc.catastro.meh.es/Cartografia/WMS/ServidorWMS.aspx</li>
+            <li><a href="data/coruna_universidad.osm">data/coruna_universidad.osm</a></li>
+          </ul>
+        </section>
+
+
+
+        <section>
+          <a href="https://carto.com/learn/guides/styling/animating-maps-with-point-data">Animando una migración de aves</a>
+        </section>
+
+        <section>
+          "Heat Maps" y "Heat Maps animados"
+          <p style="font-size:10px">(descargar datos de encuesta emapic)</p>
+        </section>
+
+      </section>
+        <section>
+          * SQL
+          * Torque
+          * Principios de diseño cartográfico.
+            * Cuantiles vs Cuartiles
+            * Colores apropiados
+            * Densidad vs Totales
+          * Importar datos de OSM
+        </section>
+
+        <section>
+          Contextualización de Carto como Startup Española de mayor éxito internacional de los últimos años, Premio Príncipe de Girona 2016, etc, etc.
+
+          Luego presentación de funcionalidades actuales y futuras, en su paso a Builder.
+          Por la tarde sesión práctica para que hagan sus propios mapas web.
+          Idea de descargar datos de OSM, de las zonas trabajadas en HOT y que cada uno las represente a su gusto.
+          También podrían descargar datos de encuestas de Emapic, propias o de la Galería, y hacer mapas con Carto.
+          Al final podemos presentar los trabajos realizados y fin.
+        </section>
+    </div>
+</div>
+        <script src="reveal.js-3.3.0/lib/js/head.min.js"></script>
+        <script src="reveal.js-3.3.0/js/reveal.js"></script>
+        <script src="main.js"></script>
+    </body>
+</html>

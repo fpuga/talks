@@ -1,0 +1,23 @@
+ul.nobullet {
+  list-style-type: none;
+}
+
+a.sourcecite:link {
+    color: grey;
+}
+
+a.sourcecite:visited {
+    color: grey;
+}
+
+a.sourcecite:hover {
+    color: grey;
+}
+
+a.sourcecite:active {
+    color: grey;
+}
+
+.font-50 {
+  font-size: 50% !important;
+}
