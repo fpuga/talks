@@ -227,7 +227,7 @@
         </section>
 
         <section>
-          <img src="media/carto_engine.png" />
+          <img width="75%" src="media/carto_engine.png" />
         </section>
 
         <section>
@@ -266,11 +266,7 @@
         </section>
 
         <section>
-          Exportar
-          <ul>
-            <li>Datasets</li>
-            <li>Mapas</li>
-          </ul>
+          Exportar Datasets y Mapas
         </section>
 
         <section>
@@ -279,27 +275,29 @@
             <li>Metadata (nombre, descripción, ...)</li>
             <li>Añadir, Eliminar y Renombrar columnas</li>
             <li>Añadir filas y modificar los datos</li>
-            <li><strong>Tipos de datos<strong>: <small>No todas las opciones disponibles para todos los tipos</small></li>
+            <li><strong>Tipos de datos</strong>: No todas las opciones disponibles para todos los tipos</li>
             <li>Digitalizar nuevos elementos</li>
-            <li>Georeferenciar información <small>(export && import)</small></li>
+            <li>Georeferenciar información (export && import)</li>
             <li>cartodb_id, the_geom, the_geom_webmercator</li>
           </ul>
         </section>
 
         <section>
-          Mapas
+          Mapas<br><br>
           <ul>
             <li>Modificar los metadatos</li>
             <li>Publicar mapas</li>
             <li>Opciones del mapa</li>
+          </ul>
         </section>
 
         <section>
-          Mapas - Basemap
+          Mapas - Basemap<br><br>
           <ul>
             <li>¿Qué es?</li>
             <li>Ejemplos de distintos mapas base</li>
             <li>Etiquetas y Niveles de Zoom</li>
+          </ul>
         </section>
 
         <section>
@@ -330,55 +328,127 @@
 
       <section>
         <section>
+          PRINCIPIOS BÁSICOS DE CARTOGRAFÍA
+        </section>
+        <section>
+          <span style="font-size:75%">
+            Métodos de cuantificación<br><br>
+            <ul>
+              <li><strong>Quantiles</strong>: Cada categoría contiene el mismo número de elementos. Se usa para datos bien distribuidos. Valores parecidos pueden acabar en diferentes categorías y valores distintos en la misma.</li>
+              <li><strong>Jenks (Natural breaks)</strong>: Trata de agrupar los datos siguiendo una clasificación "natural". Datos parecidos en la misma clase, y datos distintos en distintas clases</li>
+              <li><strong>Equal Interval</strong>: Divide el rango de valores entre en número de intervalos y mete cada valor en la categoría que le corresponda (usado para porcentajes, ratios, cosas como temperaturas)</li>
+              <li><strong>Heads/Tails</strong>: Se usa para mostrar datos que difieren mucho de valor. Se cogen los valores por encima y por debajo de la media y se obtienen dos clasificaciones. Se sigue diviendo cada clasificación anterior del mismo modo</li>
+            </ul>
+          </span>
+        </section>
+
+        <section>
+          <span style="font-size:75%">
+            <p style="text-align:left !important">Símbolos graduados (range-gradding) y proporcionados (absolute scaling). Son una forma de representar valores numéricos. Símbolo más grande mayor valor. También se puede denominar así a la escala de colores empleada y no al tamaño</p>
+            <ul>
+              <li><strong>Graduado</strong>: El símbolo se mete en una categoría. Todos los símbolos de la categoría tendrán el mismo tamaño</li>
+              <li><strong>Proporcionados</strong>: El tamaño es directamente proporcional al valor</li>
+            </ul>
+            </span>
+        </section>
+
+      </section>
+
+      <section>
+        <section>
           PRÁCTICAS
         </section>
 
         <section>
-          Probar mapas base
+          Probar mapas base<br><br>
           <ul>
             <li><a href="data/coruna_universidad.osm">data/coruna_universidad.osm</a></li>
           </ul>
         </section>
 
         <section>
-          Comparar OSM con Catastro
+          Comparar OSM con Catastro<br><br>
           <ul>
+            <li>Sólo poligonos que permitan la comparación</li>
             <li>WMS Catastro (Capa <em>CONSTRU</em>): http://ovc.catastro.meh.es/Cartografia/WMS/ServidorWMS.aspx</li>
             <li><a href="data/coruna_universidad.osm">data/coruna_universidad.osm</a></li>
           </ul>
         </section>
 
-
-
         <section>
-          <a href="https://carto.com/learn/guides/styling/animating-maps-with-point-data">Animando una migración de aves</a>
+          Estilizar puntos, líneas y polígonos<br><br>
+          <ul>
+            <li>Orden de las capas: ¿Se pueden ver puntos que estén debajo de polígonos?</li>
+            <li><a href="data/coruna_universidad.osm">data/coruna_universidad.osm</a></li>
+            <li><a href="data/batimetria_linea_23029.zip">data/batimetria_linea_23029.zip</a></li>
+            <li><a href="data/Saga_Star_Wars.csv">data/Saga_Star_Wars.csv</a></li>
+            <li>Provincias de España</li>
+          </ul>
         </section>
 
         <section>
-          "Heat Maps" y "Heat Maps animados"
-          <p style="font-size:10px">(descargar datos de encuesta emapic)</p>
+          Animando datos<br><br>
+          <li><a href="https://kendavis.carto.com/tables/quakes_for_cdb/public">Terremotos</a></li>
+          <li><a href="https://carto.com/learn/guides/styling/animating-maps-with-point-data">Animando una migración de aves</a></li>
+        </section>
+
+        <section>
+          Responder preguntas con los widgets<br><br>
+          <li>Cual ha sido la magnitud del mayor terremoto en Sur América</li>
+          <li>Número de terremos para cada orden de magnitud</li>
+        </section>
+
+        <section>
+          Simbolizar dos variables a la vez
+          <ul>
+            <li>El tamaño de los puntos representa la población total (símbolo graduado)</li>
+            <li>El color del punto representa al continente (cuantifiación por categoría)</li>
+            <li>Añadir una leyenda con el nombre del país como título, y la población como dato</li>
+            <li>Añadir un widget que me permita filtrar por continente</li>
+            <li><a href="data/world_population_by_continent.geojson">data/world_population_by_continent.geojson</a></li>
+          </ul>
+        </section>
+
+        <section>
+          <span font-size="75%">
+            CartoCSS<br><br>
+            <ul>
+              <li>Cargar capa de líneas y aplicar: line-dasharray: 5,5;</li>
+              <li>Probar con line-dasharray: 5,1,5;</li>
+              <li>Cargar capa de puntos y usar un símbolo de imagen ( marker-file: url('https://www.mapbox.com/mapbox.js/assets/images/astronaut1.png'); ) </li>
+              <li>Doc cartocss [<a href="https://carto.com/academy/courses/academy-lite/cartocss/">1</a>]</li>
+            </ul>
+        </span>
+        </section>
+
+        <section>
+          Ejemplos de análisis<br><br>
+          <ul>
+            <li><a href="data/province_names.csv">data/comunidades_names.csv</a><li>
+            <li><a href="http://www.ine.es/">INE - Bibliotecas por comunidad</a></li>
+            <li>Añadir análisis de georeferenciación</li>
+            <li>Añadir análisis de "JOIN"</li>
+          </ul>
+        </section>
+
+        <section>
+          Ejemplo de JOIN con SQL
+          <ul>
+            <li><a href="https://carto.com/academy/courses/sql-postgis/">Doc SQL</a>
+          </ul>
+        </section>
+
+        <section>
+          <ul>
+            <li>https://carto.com/blog/proportional-symbol-maps/</li>
+            <li>Ejemplo con datos de emapic</li>
+            <li>Mapa de resultados electorales</li>
+          </ul>
         </section>
 
       </section>
-        <section>
-          * SQL
-          * Torque
-          * Principios de diseño cartográfico.
-            * Cuantiles vs Cuartiles
-            * Colores apropiados
-            * Densidad vs Totales
-          * Importar datos de OSM
-        </section>
 
-        <section>
-          Contextualización de Carto como Startup Española de mayor éxito internacional de los últimos años, Premio Príncipe de Girona 2016, etc, etc.
 
-          Luego presentación de funcionalidades actuales y futuras, en su paso a Builder.
-          Por la tarde sesión práctica para que hagan sus propios mapas web.
-          Idea de descargar datos de OSM, de las zonas trabajadas en HOT y que cada uno las represente a su gusto.
-          También podrían descargar datos de encuestas de Emapic, propias o de la Galería, y hacer mapas con Carto.
-          Al final podemos presentar los trabajos realizados y fin.
-        </section>
     </div>
 </div>
         <script src="reveal.js-3.3.0/lib/js/head.min.js"></script>
