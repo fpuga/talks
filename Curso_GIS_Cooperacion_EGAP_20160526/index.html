@@ -1,0 +1,877 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>GIS y Cooperación al Desarrollo</title>
+
+	<link rel="stylesheet" href="../reveal.js-3.3.0/css/reveal.css">
+	<link rel="stylesheet" href="../reveal.js-3.3.0/css/theme/black.css">
+
+	<!-- Theme used for syntax highlighting of code -->
+	<link rel="stylesheet" href="../reveal.js-3.3.0/lib/css/zenburn.css">
+
+	<!-- Printing and PDF exports -->
+	<script>
+	var link = document.createElement( 'link' );
+	link.rel = 'stylesheet';
+	link.type = 'text/css';
+	link.href = window.location.search.match( /print-pdf/gi ) ? '../reveal.js-3.3.0/css/print/pdf.css' : '../reveal.js-3.3.0/css/print/paper.css';
+	document.getElementsByTagName( 'head' )[0].appendChild( link );
+	</script>
+
+	<style>
+		.sourcecite {
+				color:grey;
+				font-size: 10px !important;
+		}
+	</style>
+</head>
+
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section>
+				<h3>GIS y Cooperación al Desarrollo</h3>
+				<p>(26 de Mayo de 2016)</p>
+				<p class="sourcecite"><a href="https://fpuga.github.io/Curso_GIS_Cooperacion_EGAP_20160526">https://fpuga.github.io/Curso_GIS_Cooperacion_EGAP_20160526</a></p>
+				<div style="font-size:75%; color:grey; margin:250px 0px 0px 0px; margin-left:0px; text-align:left !important; width:45%">
+					<hr color="grey">
+					Francisco Puga
+					<br><a href="https://twitter.com/fpuga">@fpuga</a> - francisco.puga@isf.es
+					<br><br>Ingeniería Sin Fronteras Galicia
+					<br><a href="https://twitter.com/ESFGALICIA">@ESFGALICIA</a> - info@galicia.isf.es
+					<div>
+			</section>
+
+			<section data-markdown>
+				<script type="text/template">
+					* Presentación de ISF
+					* Introducción a la Cooperación para el Desarrollo
+					* Del primer mapa en piedra al _Location Intelligence_ en la nube
+					* Tecnología para el Desarrollo Humano
+					* GIS en proyectos de Cooperación
+					* Ejemplos de proyectos
+				</script>
+
+				<aside class="notes" data-markdown>
+					Antes de hablar de proyectos concretos es útil hacer una pequeña (gran) reflexión sobre GIS, introducir que es Cooperación al Desarrollo y el concepto de Tecnología para el Desarrollo Humano
+
+					* Problemas a resolver (no sólo el gis): acceso a los datos, desorden, formación,...
+					* En realidad no son problemas muy distintos a los que puede haber aquí. Varía la magnitud, las aapp aquí también son responsables de que sus ciudadanos tengan agua, allí también el problema aquí es que el 100% la tiene y allí igual es el 50%. ¿Varían las causas? ¿Varían las soluciones?
+					* Software libre
+					* Datos libre: osm
+					* ¿Hardware libre?
+				</aside>
+			</section>
+
+			<section>
+				<section>
+					<img src="media/ESF_logo.jpg">
+					<p style="font-size:90%;">Por unha Tecnoloxía ó servicio do Desenvolvemento Humano</p>
+				</section>
+				<section data-markdown>
+					ESF es una Organización no Gubernamental para el Desarrollo (ONGD), que busca contribuír a la construcción de una sociedad mundial justa y solidaria poniendo la tecnología al servicio del desarrollo humano.
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+					* Fundada en Vigo en 1993
+					* Más de 200 socias, 60 voluntarias y 3 contratadas
+					* Sedes: Coruña, Lugo, Santiago, Vigo, San Lorenzo (Honduras)
+					* Integrada en la Federación Española de Ingeniería Sin Fronteras
+					* Basada en personas voluntarias (estructura horizontal)
+					* Asociación *DE* voluntarios. *NO* asociación *CON* voluntarios
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+					* Actualmente vivimos una situación de desequilibrio.
+					* Es técnica y económicamente posible acabar con la pobreza. Sólo hace falta voluntad política
+					* ¡Creemos en otro modelo de desarrollo!
+				</script>
+					<aside class="notes">
+						* La Ingeniería es una herramienta esencial para el acceso universal a los servicios básicos, imprescindibles para una vida digna.
+						* Objetivos de Desarrollo del Milenio (ODM) de la ONU:
+						* Para el 2012: Satisfacer las necesidades energéticas de 2.000 mil de personas.
+						* Para el 2015: Reducir a la mitad la población que vive bajo el umbral de la pobreza.
+						* Para el 2025: Conseguir cobertura global en abastecimiento de agua, saneamiento e higiene.
+					</aside>
+				</section>
+
+				<section data-markdown>
+					##### Ámbitos de actuación
+					* Proyectos de Cooperación Internacional al Desarrollo (PICD)
+					* Investigación para el Desarrollo (IpD)
+					* Educación para el Desarrollo (EpD)
+					* Incidencia
+					* Sensibilización
+				</section>
+
+				<section>
+					<img src="media/piedras_una.jpg">
+				</section>
+				<section>
+					<img src="media/piedras_dos.jpg">
+				</section>
+				<section>
+					<img src="media/piedras_tres.jpg">
+				</section>
+				<section>
+					<img src="media/piedras_cuatro.jpg">
+					<br><small>ESF es una asociación de personas con pensamientos y sentimientos distintos que trabajan juntos aportando sus opiniones y conocimientos</small>
+				</section>
+
+				<section data-markdown>
+					##### Qué puedo hacer en ISF
+
+					* Gestión económica
+					* Proyectos: identificación, formulación, seguimiento, justificación, técnica
+					* Cursos/asignaturas: logística ponentes, preparar contenidos
+					* Campañas sensibilización e incidencia
+					* Gestión equipos informáticos y servicios, programación
+					* Comunicación
+					* Formación interna
+					* Gestión voluntariado
+					* Investigación
+					* Apoyo económico
+				</section>
+
+			</section> <!-- Presentación ISF-->
+
+			<section>
+				<img src="media/logo_icarto.png">
+			</section>
+
+			<section> <!-- Cooperación-->
+				<section>
+					<h3>Introducción a la Cooperación para el Desarrollo</h3>
+				</section>
+				<section>
+					<dl>
+						<dt><strong>Desarrollo:</strong></dt>
+						<dd>Proceso global, económico, social, cultural y político que tiende
+						a la mejora constante del bienestar de toda la población y de todos los individuos, sobre la
+						base de la participación activa, libre y significativa en el desarrollo y en la distribución justa de
+						los beneficios que de él se derivan</dd>
+
+						<dt><strong>Cooperación:</strong></dt>
+						<dd>La coparticipación como iguales de los pueblos del Mundo en la causa común del desarrollo</dd>
+					</dl>
+
+					<p style="font-size: 50%">Declaración sobre el Desarrollo de las Naciones Unidas del 4 de diciembre de 1986</p>
+				</section>
+
+				<section>
+					<img src="media/circulo_virtuoso_desarrollo.png">
+					<aside class="notes">
+						Amartya Sen. Ejemplo voto Afganisthan
+						http://es.wikipedia.org/wiki/%C3%8Dndice_de_desarrollo_humano
+						http://es.wikipedia.org/wiki/Amartya_Sen
+
+						El más revolucionario de los aportes de Amartya Sen en el desarrollo de los indicadores económicos y sociales es
+						el concepto del enfoque de las «capacidades», que serían las capacidades de las que cada persona dispondría para
+						poder convertir sus derechos en libertades reales.
+
+						Un gobierno tiene que ser juzgado en función de las capacidades concretas de sus ciudadanos. Por ejemplo, en los
+						Estados Unidos, los ciudadanos tienen el derecho constitucional de votar. Para Amartya K. Sen esto no significa nada;
+						él se pregunta si se reúnen todas las condiciones para que los ciudadanos puedan ejercer la capacidad de votar.
+						Estas condiciones pueden ser de muchos tipos, desde el acceso a la educación hasta el hecho de que los ciudadanos
+						tengan medios de transporte para tener acceso a las urnas. Sólo cuando estas barreras estén superadas, se puede decir
+						que el ciudadano puede ejercer su elección personal.
+
+						Su aproximación basada en las «capacidades» se enfoca en la libertad positiva, que es la capacidad real de una persona
+						de ser o de hacer algo, en vez de la libertad negativa, que es común en economía y se centra simplemente en la no interferencia.
+						En la hambruna de Bengala, la libertad negativa de los trabajadores rurales para comprar alimento no se vio afectada. Sin embargo,
+						murieron de hambre porque no estaban positivamente libres para hacer cualquier cosa: no tenían la libertad de alimentarse ni la
+						capacidad de escapar de la muerte.
+					</aside>
+				</section>
+
+				<section>
+					<img src="media/enfoque_asistencialista.png">
+				</section>
+
+				<section>
+					<img src="media/enfoque_desarrollista.png">
+				</section>
+
+				<section>
+					<img src="media/enfoque_critico.png">
+				</section>
+
+				<section>
+					<img src="media/desarrollo_humano_sostenible.png">
+				</section>
+
+				<section>
+					<img src="media/ciudadania_global.png">
+				</section>
+
+				<section>
+					<img src="media/agentes_cooperacion.png">
+				</section>
+				<section>
+					<h5>Objetivos de Desarrollo Sostenible (2015-2030)</h5>
+					<img src="media/09-09-S-SDG-Poster.jpg">
+				</section>
+
+				<section>
+					<h5>La verdad es que ahora mismo...</h5>
+					<ul>
+						<li>836 millones de personas aún viven en la pobreza extrema (1.25$)(~ 1 de cada 9 personas)</li>
+						<li>2200 millones por debajo del umbral de pobreza (2$)</li>
+						<li>795 millones no disponen de alimentos suficientes para llevar una vida saludable y activa.</li>
+						<li>103 millones de jóvenes no tienen un nivel mínimo de alfabetización, más del 60% son mujeres</li>
+					</ul>
+					<p class="sourcecite"><a href="http://www.un.org/sustainabledevelopment/">Naciones Unidas 2015</a></p>
+				</section>
+				<section>
+					<h5>La verdad es que ahora mismo...</h5>
+					<ul>
+						<li>2.400 millones carecen de acceso a servicios básicos de saneamiento, como retretes o letrinas</li>
+						<li>1.800 millones de personas utilizan una fuente de agua potable que está contaminada con materia fecal</li>
+						<li>Una de cada cinco personas todavía no tiene acceso a la electricidad moderna</li>
+						<li>3.000 millones dependen de la biomasa tradicional, como la madera y los residuos de plantas animales, para cocinar y para la calefacción</li>
+					</ul>
+					<p class="sourcecite"><a href="http://www.un.org/sustainabledevelopment/">Naciones Unidas 2015</a></p>
+				</section>
+
+				<section>
+					<img src="gain_lose_infographic_twitter.jpg">
+					<p class="sourcecite"><a href="http://oxfamblogs.org/fp2p/twice-as-much-leaving-poor-countries-as-is-going-in-big-new-report-on-the-state-of-global-financial-flows/">$2 leaving developing countries for every $1 going in</a></p>
+				</section>
+			</section> <!-- /Cooperación-->
+
+			<section>
+				<section>
+					<h3>Del primer mapa en piedra al <em>Location Intelligence</em> en la nube</h3>
+					<aside class="notes">
+						Reflexión sobre la evolución de las TIG y su aplicación en el contexto de los PICD
+						Entender los mapas como un medio de comunicación y no como un contenedor de datos
+					</aside>
+				</section>
+
+				<section>
+					El 100% de la información tiene componente espacial
+					<p class="sourcecite">Varela, 2009</p>
+					<aside class="notes">
+						Otros autores la cifran en un 70% (Olaya, 2011)
+						La mayor parte de datos llega por la vista. La información obtenida tras procesar el dato nos asegura la supervivencia (búsqueda de refugio, alimiento, ...)
+					</aside>
+				</section>
+				<section>
+					<img src="media/first_map.jpg" width="75%" height="75%">
+					<p class="sourcecite">https://commons.wikimedia.org/wiki/File:Clay_tablet_containing_plan_of_Nippur_(Hilprecht_EBL_1903).jpg</p>
+					<aside class="notes">
+						Tablilla de arcilla con un mapa de Nippur (Babilonia). 1.400ac. Incluye el registro "catastral" de una parcela
+						Estrellas en pintura rupestre 16.500 ac. http://news.bbc.co.uk/2/hi/science/nature/871930.stm
+						Çatal Höyük (Turquía). "Plano de Ciudad". 8.000 ac. http://alpoma.net/carto/?p=583
+						Mapa caída meteorito 3.300 ac. http://www.messagetoeagle.com/controversial-5500-year-old-sumerian-star-map-of-ancient-nineveh-reveals-observation-of-kofels-impact-event/
+					</aside>
+				</section>
+				<section>
+					<span style="font-size:75%">Aucta Orbis Terrae Descriptio ad Usum Navigantium Emendate Accommodata</span>
+					<img src="media/Mercator_1569.png">
+					<p class="sourcecite">https://commons.wikimedia.org/wiki/File:Mercator_1569.png</p>
+					<aside class="notes">
+						Nueva y más completa representación del globo terrestre adaptada a la navegación (Mercator, 1569)
+						Despegue de la información geográfica con la navegación
+						Los ángulos son lo importante. De Nueva York a Vigo una línea recta
+					</aside>
+				</section>
+				<section>
+					<div style="float:left; display:inline; width:15%">
+						<img src="media/john_snow.png" style="display:block">
+						<img src="media/Whitehead_henry1884.jpg" style="display:block">
+					</div>
+					<img src="media/john_snow_mapa.png">
+
+					<aside class="notes">
+						Mapa del cólera de John Snow. 1854 "El primer GIS"
+						https://en.wikipedia.org/wiki/1854_Broad_Street_cholera_outbreak
+					</aside>
+				</section>
+
+				<section>
+					<img src="media/mapquest_traffic_screenshot.png">
+					<aside class="notes">
+						MapQuest no fue el primero pero si el primero en "popularizar" los mapas online en 1996
+						https://en.wikipedia.org/wiki/Web_mapping#History_of_web_mapping
+					</aside>
+				</section>
+
+				<section>
+					<img src="media/cartodb_data_observatory.png">
+					<p class="sourcecite"><a href="https://cartodb.com/data/">CartoDB Data Observatory</a></p>
+				</section>
+
+				<section>
+					<img src="media/map_kibera.png">
+					<p class="sourcecite"><a href="https://cartodb.com/data/">Map Kibera</a></p>
+				</section>
+
+				<section>
+					<img src="media/imagen_sig_varela.jpg">
+
+					<aside class="notes">
+						Componentes de un SIG
+						1er SIG. 1960. Roger Tomlinson para el Departamento Forestal y Desarrollo Rural de Canada
+					</aside>
+				</section>
+
+				<section>
+					<img src="media/gis_a_location_intelligence.png">
+					<a href="https://goo.gl/nLYmv6">https://goo.gl/nLYmv6</a>
+					<aside class="notes">
+						Presentación de Ed Parsons
+					</aside>
+				</section>
+
+				<section>
+					<h5>Cartografía participativa</h5>
+						<img src="media/croquis_comunidad.jpg" width="45%" style="float:left">
+						<img src="media/cartografia_suelo.jpg" width="50%" >
+				</section>
+
+
+			</section> <!-- TIG -->
+
+			<section><!-- TpDH -->
+				<section>
+					<h5>La tecnología no es neutra</h5>
+				</section>
+				<section>
+					<p class="sourcecite"><a href="https://xkcd.com/977/">XKCD Map Proyections</a></p>
+					<img src="media/map_projections.png">
+				</section>
+
+				<section>
+					<img src="media/proyeccion_mercator.jpg">
+					<aside class="notes">
+						Qué es más grande África o Europa
+					</aside>
+				</section>
+
+				<section>
+					<img src="media/proyeccion_peters.jpg">
+				</section>
+
+				<section>
+					<img src="media/true_size_africa.png" width="60%">
+					<p class="sourcecite"><a href="http://www.informationisbeautiful.net/2010/the-true-size-of-africa/">The true size of Africa</a></p>
+					<aside class="notes">
+						Realmente podemos hablar de África como un todo
+					</aside>
+				</section>
+
+				<section>
+					<img src="media/europa_centro.png">
+					<p class="sourcecite"><a href="https://voluntariamente.wordpress.com/2009/11/03/distorsion-de-la-realidad/">Modelos</a></p>
+					<aside class="notes">
+						No es sólo ángulos frente a áreas
+					</aside>
+				</section>
+
+				<section>
+					<img src="media/ecuador.png">
+					<p class="sourcecite"><a href="https://voluntariamente.wordpress.com/2009/11/03/distorsion-de-la-realidad/">Modelos</a></p>
+				</section>
+
+				<section style="font-size:75%; text-align:left">
+					<p>Cuando la humanidad empezó a usar utensilios y a transmitir información sobre éstos de una
+	generación a otra nació el concepto de “tecnología” tal y como lo conocemos hoy en día. Este
+	término habitualmente se asocia a complejos artefactos capaces de fabricar o hacer funcionar
+	algo, pero en realidad la definición es mucho más amplia. La tecnología no es solamente
+	una máquina, sino que básicamente implica un conocimiento que puede ser usado
+	para producir un bien de consumo o un servicio (Chatterji, 1991)</p>
+
+
+	<p>El conjunto de personas – y capital humano -, herramientas y artefactos, metodologías,
+	procesos y conocimientos que ensamblados constituyen una tecnología debe estar al servicio
+	del desarrollo social y económico de un grupo humano. No siempre ha sido así – la tecnología
+	militar podría ser un ejemplo – pero podemos afirmar que para ciertas poblaciones la
+	tecnología sí ha sido un vector de desarrollo. Es además necesario que cualquier tecnología
+	se plantee desde una perspectiva de sostenibilidad y mínimo impacto negativo, tanto
+	desde el punto de vista humano como medioambiental.</p>
+	</section>
+
+				<section>
+					<h5>Tecnología Apropiada</h5>
+					<div style="text-align:left">
+						<ul>
+							<li>Bajo costo y priorización del uso de materiales locales</li>
+							<li>Pequeña escala, para ser sufragables por familias individuales o grupos pequeños de familias.</li>
+							<li>Fácil utilización, control y mantenimiento por la población sin un alto nivel de cualificación específica.</li>
+							<li>Sostenibilidad, pueden utilizarse sin dañar el medio ambiente.</li>
+							<li>Son flexibles, varían dependiendo del entorno sociocultural, lugar y circunstancias cambiantes. Una tecnología apropiada en un contexto puede no serlo en otro.</li>
+						</ul>
+					</div>
+					<aside class="notes">
+						Ejemplo: Cóctel Molotov
+						Ejemplo: AK-47
+						Ejemplo de tecnología apropiada dependiendo del contexto: Un igloo.
+						Las tecnologías apropiadas existen desde siempre. De hecho en "tiempos pretéritos" sólo había TA. Pero la reflexión filósofica en torno al término nace en los 70 de la mano del economista E. F. Sumacher y su libro "Small is Beautiful" como respuesta al "desarrollismo" de la época y la tendencia hacia las grandes infraestructuras.
+						https://es.wikipedia.org/wiki/Lo_peque%C3%B1o_es_hermoso
+
+						¿Hablar de "Crisis de las escalas" y de "Infraestructuras distribuidas"?
+
+						Una tecnología no es apropiada en si misma, si no en función de lo que se quiere hacer y de lo que se va a hacer
+					</aside>
+				</section>
+
+				<section>
+					<img src="media/COCTEL-MOLOTOV.jpg">
+				</section>
+
+				<section>
+					<h5>¿Tecnología para el Desarrollo Humano?</h5>
+					<div style="float:left; display:inline; width:30%">
+						<img src="media/COCTEL-MOLOTOV.jpg" style="display:block">
+					</div>
+
+						<ul style="font-size:50%; width:60%">
+							<li>Bajo costo y priorización del uso de materiales locales</li>
+							<li>Pequeña escala, para ser sufragables por familias individuales o grupos pequeños de familias.</li>
+							<li>Fácil utilización, control y mantenimiento por la población sin un alto nivel de cualificación específica.</li>
+							<li><strike>Sostenibilidad, pueden utilizarse sin dañar el medio ambiente.</strike></li>
+							<li>Son flexibles, varían dependiendo del entorno sociocultural, lugar y circunstancias cambiantes. Una tecnología apropiada en un contexto puede no serlo en otro.</li>
+						</ul>
+				</section>
+
+				<section>
+					<h5>Tecnología para el Desarrollo Humano (TpDH)</h5>
+					<div style="font-size:75%; text-align:left">
+						<p>La evolución del concepto de TA hacia TpDH está relacionado con la propia evolución de la definición de Desarrollo Humano que ahora contempla el aspecto de la “ciudadanía global”. Todos las personas usuarias de nuevas tecnologías deben ser consultadas, a fin de analizar cuáles son sus necesidades, si la nueva tecnología es realmente adecuada, quién se beneficiará, quién la controlará y velará por su mantenimiento, y qué impacto socioeconómico tendrá. Especial atención debe prestarse a los colectivos tradicionalmente excluidos, como las mujeres, evitando que su voz quede silenciada.</p>
+						<p>Por tanto, es necesario que los procesos de desarrollo incorporen el aumento de las capacidades de generación / reconfiguración del conocimiento, evitando así la dependencia de los que que las detentan.</p>
+						<p>Además, para que el desarrollo sea humano, es necesario que tanto ese proceso como el conocimiento en sí mismo permitan y faciliten ganar libertad y autonomía, tanto de forma individual como colectiva.</p>
+					</div>
+
+					<aside class="notes">
+						TA != TpDH
+						TpDH no está en frente de TA pero si es una superación o un complemento de TA
+						TA no es algo a aplicar en Cooperación, es algo aplicale siempre
+						Pone el acento en el objetivo/finalidad para el que se crean las cosas.
+					</aside>
+				</section>
+
+				<section>
+					Software aspecto fundamental de las TIG
+				</section>
+
+				<section style="font-size:75%; text-align:left">
+					<p>Un programa es software libre si los usuarios tienen básicamente
+				cuatro tipos de libertades:</p>
+				<ol>
+					<li>Libertad para ejecutar el programa en cualquier sitio, con cualquier propósito y para	siempre.</li>
+					<li>Libertad para estudiarlo y adaptarlo a las necesidades.</li>
+					<li>Libertad de redistribución, permitiendo colaborar con otros usuarios.</li>
+					<li>Libertad para mejorar el programa y publicar las mejoras.</li>
+				</ol>
+				</section>
+
+				<section style="font-size:75%; text-align:left">
+				Un error común es confundir el software libre con el software gratuito. Que un programa
+				cumpla las 4 libertades ya expuestas, no significa que no se pueda vender. Sin embargo, como
+				cualquier usuario puede redistribuir un programa sin pedir contraprestación económica ni
+				permiso, resulta prácticamente imposible obtener grandes ganancias simplemente por la
+				distribución de software libre: cualquiera que lo haya obtenido puede a su vez redistribuirlo a
+				precio más bajo, o incluso gratis. Por ello, de forma parecida a la industria musical, la principal
+				fuente de ingreso de un grupo de música (compañía que desarrolle software libre) no es la
+				venta de cd (licencias de uso) si no los conciertos (servicios asociados al software y
+				personalizaciones)
+				</section>
+
+				<section>
+					<iframe width="420" height="315" src="https://www.youtube.com/embed/FvLJ2JotttM" frameborder="0" allowfullscreen></iframe>
+				</section>
+
+				<section>
+					<h5>Software Libre: Posesión o Alquiler</h5>
+					<img src="media/posesion_o_alquiler.png">
+					<aside class="notes">
+					Utilizar un sistema operativo Windows o ArcGIS implica pagar para adquirirlo, pero este pago no confiere permiso para copiarlo, distribuirlo a otras personas
+					o modificarlo. Cuando compramos un programa lo que estamos pagando es el permiso de uso,
+					o, lo que es lo mismo, la licencia. Este tipo de programas se conoce como software
+					propietario o privativo.
+					</aside>
+				</section>
+
+				<section>
+					<h5>Bondades del Software Libre</h5>
+					<ul style="font-size:75%; text-align:left">
+						<li>Menor TCO (Total Cost Ownership). Coste a largo plazo y sostenibilidad.</li>
+						<li>Facilidad para realizar adaptaciones que se adecúen a las particularidades locales</li>
+						<li>Fomento a la creación de empresas locales que provean servicios</li>
+						<li>Rápido ciclo de desarrollo. Continuas nuevas versiones que solucionan problemas y añaden funcionalidades.</li>
+						<li>En general se trata de un software más seguro (menor incidencia de virus)</li>
+						<li>Excelente herramienta de aprendizaje para programadores.</li>
+						<li>Disponibilidad a largo plazo.</li>
+						<li>Menor dependencia tecnológica.</li>
+						<li>En general existe un mejor aprovechamiento de los recursos hardware de modo que no tengamos que estar invirtiendo en nuevos ordenadores continuamente.</li>
+						<li>Adaptación a idiomas locales.</li>
+					</ul>
+
+					<aside class="notes">
+						Soberanía   tecnológica:  El   software   libre   es   una   herramienta   idónea   para   alcanzar  la   soberanía
+					tecnológica y no depender de transnacionales y sus modelos económicos. por una cuestión ética de
+					emplear herramientas al margen de grandes compañías que en su conjunto son las responsables de
+					la brecha primer‐tercer mundo. Promovería además un menor consumismo inducido y una menor
+					dependencia tecnológica, con lo que las inversiones en equipos serían solo las necesarias, y no las
+					que condicionan los paquetes tecnológicos de los proveedores privados, con el consiguiente ahorro
+					para el ciudadano y para el Estado en renovación de equipos.
+
+					Filosofía de  colaboración‐intercambio.  Favorece procesos  participativos.  Modelo  más coherente
+					con los valores que promovemos desde las ONG. Coherencia entre el discurso y los valores que se
+					promueven a través de las políticas de cooperación al desarrollo en las que, por lo menos debería
+					haber   una   componente   politico‐ideológica.   En   este   sentido   los   softwares   libres   implican   una
+					reducción los gastos y de pagos a grandes multinacionales y una mayor independencia y seguridad
+					para   los   usuarios.   Y   de   aquí   tendría   que   surgir   nuestra   argumentación   más   fuerte   cuando
+					defendemos su uso frente al software privativo. La utilización de software libre en proyectos de
+					cooperación al desarrollo es una cuestión de justicia social. Uno de los valores de la cooperación al
+					desarrollo   es   la   transferencia   tecnológica   para   permitir   que   los   países   alcancen   su   nivel   de
+					desarrollo, eliminando obstáculos como puede ser el acceso a tecnologías apropiadas. Se trata de
+					un modelo más democrático. La opción tomada por el software libre es una opción que requiere un
+					alto grado de compromiso, de la ONGD que lo propone y del compromiso de la contraparte local,
+					así como de los beneficiarios o usuarios finales. Promueve la cooperación comunitaria.
+
+					Independencia: Contribuiría a disminuir la corrupción en el Estado, pues en todos los países el
+					sector   privado   proveedor   de   servicios   del   estado,   ejerce   unos   lobbys,   no   siempre   éticos,   que
+					condicionan muchos intereses en los procesos de licitación, para la provisión y mantenimiento de
+					estos servicios, no quedando libres de esa presión los políticos y altos funcionarios que pueden
+					llevarse un beneficio de esos procesos y de los ganadores de los mismos.
+
+
+					Desarrollo local: El empleo de software libre puede ayudar a crear empleo local relacionado con la
+					tecnología debido a la posibilidad de acceder al código fuente del software, con lo cual se van
+					formando   profesionales   en   la   materia.  Sirve   para   crear   comunidades   de   desarrolladores   en   el
+					propio   país,   lo   cual   es   interesantísimo   si   se   trabaja   con   un   enfoque   de   fortalecimiento   de
+					capacidades y de no crear dependencia tecnológica. El software libre favorece la competencia y la
+					entrada   al   juego   de   pequeñas   empresas   que   no   podrían   competir   con   las   grandes   dando   a   la
+					población local un nicho  de empleo del que carecían .El software libre favorece la apropiación
+					considerado que la herramienta se puede adaptar a los contextos y necesidades locales aunque por
+					eso se necesitaría un desarrollo especifico.
+
+
+					Adaptabilidad:    Posibilidad   de   usar   posteriormente   plugins   específicos   para   la   realización   de
+					diferentes tareas. Al usar software libre y aprovechando las comunidades de ayuda que surgen en
+					torno a estos programas, es posible contactar con programadores que puedan solventar dudas o
+					echar una mano en la creación de un nuevo módulo. Por otro lado, otro factor fundamental de cara
+					a elegir el software libre, es la libertad que nos ofrece este tipo de software. Podemos modificar el
+					programa y adaptarlo a las necesidades que plantea nuestro proyecto (por ejemplo respecto al
+					idioma que queramos utilizar en el programa).
+
+					Tecnología apropiada:  Se adapta a lo que se considera una tecnología apropiada, es decir, puede
+					dar respuestas positivas a preguntas del tipo: ¿Usa recursos locales? ¿Se integra adecuadamente en
+					la   sociedad?   ¿No   crea   dependencia   externas?   ¿Es   participativa?   ¿Esta   tecnología   ofrece
+					oportunidades   a   la   población   local   para   que   se   involucre   en   el   proceso   de   modificación   e
+					innovación?...
+					</aside>
+				</section>
+
+				<section>
+					<h5>Ingresos por royalties</h5>
+					<img src="media/cartograma_ingresos_royalties.png">
+				</section>
+
+				<section>
+					<h5>Pobreza</h5>
+					<img src="media/cartograma_pobreza.png">
+				</section>
+
+			</section><!-- /TpDH -->
+
+			<section> <!-- GIS y Cooperación -->
+				<section>
+					<h5>GIS y Cooperación</h5>
+				</section>
+
+				<section>
+					<h5>El GIS no es el resultado, es la herramienta</h5>
+				</section>
+
+				<section style="font-size:75%">
+					<p>Un GIS en el Sur vale para lo mismo que en el Norte.</p>
+					<p>Es Herramienta para la toma de decisiones</p>
+					<!-- <img src="media/toma_de_decisiones_1.png"> -->
+					<img src="media/toma_de_decisiones_2.png">
+				</section>
+
+				<section>
+					<h5>Problemas que ayuda a resolver</h5>
+					<ul>
+						<li>Planificación</li>
+						<li>Dispersión de información</li>
+						<li>Toma de decisiones</li>
+						<li>El "GIS" es flexible: Mayor partido reaprovechando datos para otros usos (Inundaciones Marcovia)</li>
+					</ul>
+				</section>
+
+				<section style="font-size:75%; text-align:left">
+					Por un lado, los SIG en cooperación al desarrollo permiten planificar las acciones de forma
+				que maximicen los impactos deseados, en los lugares más desfavorecidos y evitando que
+				se solapen actuaciones de varios actores. Por otro, ofrecen ventajas en todo el ciclo de
+				proyecto: durante las fases iniciales (identificación y estudio de soluciones), en su desarrollo
+				y en las fases posteriores a la propia implementación.
+				Nos van a permitir en todo momento, por ejemplo, conocer determinadas situaciones
+				territoriales (riesgos naturales, calidad del agua, focos epidémicos, acceso a servicios
+				básicos...) que nos van a ayudar a concentrar la intervención e identificar los lugares o
+				situaciones clave. Un SIG puede contestar preguntas como: ¿Qué hay en un lugar del territorio
+				o qué características tiene el mismo? ¿Dónde existe un hecho concreto u ocurre tal fenómeno?
+				¿Qué distribución espacial tiene dicho fenómeno? ¿Qué tendencias o cambios temporales han
+				ocurrido en el territorio? ¿Cuál es la localización óptima para tal actividad? ¿Qué pasaría en el
+				territorio si ocurriese tal condición?
+				<aside class="notes">
+					Un GIS en el Sur vale para lo mismo que en el Norte
+				</aside>
+				</section>
+
+				<section>
+					<h5>Obstaculos introducción SIG</h5>
+					<ul>
+						<li>Difíciles de usar. "Tecnología complicada"</li>
+						<li>Presupuestos limitados</li>
+						<li>GIS Libre. Lobby y "si es gratis no es bueno"</li>
+						<li>Falta de una política de colaboración e intercambio de información</li>
+						<li>Reticencias al cambio</li>
+					</ul>
+				</section>
+
+				<section>
+					<h5>Problemas que se acentúan en el Sur</h5>
+					<ul>
+						<li>Escaso personal capacitado</li>
+						<li>Presupuestos <strong>(muy)</strong> limitados</li>
+						<li>Problemas de acceso a internet</li>
+						<li>Deficiente acceso a electricidad. Apagones</li>
+						<li>Seguridad</li>
+					</ul>
+				</section>
+
+				<section style="font-size:75%; text-align:left">
+					No son problemas muy distintos a los que puede haber aquí. Varía la magnitud, las aapp aquí también son responsables de que sus ciudadanos tengan agua. Varía cuantos tienen ahora y como se puede proveer el abastecimiento.
+				</section>
+
+					<section style="font-size:75%; text-align:left">
+						<h5>Pero el contexto importa, y mucho</h5>
+						Porque es relevante la historia que vimos al principio y la reflexión sobre tecnología
+						porque en cooperación no podemos aplicarlo todo y debemos conocer lo que hay
+						a veces por motivos de carácter más técnico o de infraestructura, si no hay internet no hay nube
+						otras por un carácter más social, hay móviles y podriamos hacer una app pero las zonas son inseguras y hay asaltos
+					</section>
+
+					<section>
+						<h5>Lecciones aprendidas</h5>
+						<ul>
+							<li>El "GIS" sólo cuando haga falta. Información Geográfica no es sólo "GIS"</li>
+							<li>Difusión. No sólo a nivel científico si no con vistas a la sensibilización.</li>
+							<li>Transferencia tecnológica, TpDH y Software Libre</li>
+							<li>Comunicación fluida con terreno y sede</li>
+							<li>Integrar las ideas de los técnicos SIG, los técnicos en cooperación y los desarrolladores</li>
+						</ul>
+					</section>
+			</section> <!-- GIS y Cooperación -->
+
+			<section> <!-- Agua Honduras -->
+				<section>
+					Programa de Agua en Honduras de ISF
+				</section>
+
+				<section style="text-align:left;">
+					<p>“Reducción de la vulnerabilidad en áreas empobrecidas, a través del acceso al agua potable, el saneamiento y la gestión sostenible de recursos hídricos y del territorio, con enfoque de cuenca hidrográfica”</p>
+					<ul>
+						<li>ISF-APD en Nicaragua</li>
+						<li>ESF Cataluña en Salvador</li>
+						<li>ESF Galicia en Honduras</li>
+						<li>2008 – 2012</li>
+					</ul>
+					<aside class="notes">
+						El programa de AECID está terminado pero el programa de ISF continúa actualmente
+					</aside>
+				</section>
+				<section>
+					<img src="media/mapa_honduras.png">
+				</section>
+
+				<section>
+					<h5>Socios locales</h5>
+					<div style="float:left; display:inline; width:40%">
+						<img src="media/copartes_1.png" style="display:block">
+						<img src="media/copartes_2.png" style="display:block">
+					</div>
+
+						<ul>
+							<li>Alcaldía de Marcovia</li>
+							<li>Coddeffagolf</li>
+							<li>Save the Children</li>
+							<li>NASMAR - AHJASA</li>
+						</ul>
+				</section>
+
+				<section>
+					<h5>Plan de Gestión Integral del Recurso Hídrico</h5>
+					<h6>(PGIRH)</h6>
+					<img src="media/pgirh_1.png">
+				</section>
+
+				<section>
+					<img src="media/pgirh_2.png">
+				</section>
+
+				<section>
+					<h5>Presentación del Plan</h5>
+					<div style="float:left; display:inline; width:40%">
+						<img src="media/pgirh_3.png" style="display:block">
+					</div>
+
+						<ul>
+							<li>Patronatos</li>
+							<li>Juntas de Agua</li>
+							<li>SAANA</li>
+							<li>Alcaldías</li>
+							<li>Comunidades</li>
+						</ul>
+				</section>
+
+				<section>
+					<h5>Levantamiento de información</h5>
+					<div style="float:left; display:inline; width:35%">
+						<img src="media/pgirh_4.png" style="display:block">
+					</div>
+					<div>
+						<ul style="margin-bottom:50px">
+							<li>Socioeconómica</li>
+							<li>Técnica (Recurso Hídrico)</li>
+						</ul>
+						<img src="media/pgirh_5.png" width="60%">
+					</div>
+				</section>
+
+				<section>
+					<h5>Procesado de información y Planteamiento de propuestas</h5>
+					<ul>
+						<li>Informes de situación actual de cada comunidad</li>
+						<li>Informes de alternativas por comunidad</li>
+						<li>Memoria a nivel municipal con priorización de las actuaciones</li>
+					</ul>
+				</section>
+
+				<section>
+					<h5>Entrega de información a Alcaldías y Comunidades</h5>
+					<div style="float:left; display:inline; width:40%">
+						<img src="media/pgirh_6.png" style="display:block">
+					</div>
+						<ul style="width:55%">
+							<li>Entrega de información</li>
+							<li>Seguimiento de las municipalidades y comunidades en torno a las herramientas generadas en el PGIRH</li>
+						</ul>
+				</section>
+
+				<section>
+					<img src="media/forma_trabajo_previa.png">
+				</section>
+
+				<section>
+					<img src="media/cartolab.png">
+				</section>
+
+				<section>
+					<img src="media/gvsig_fonsagua_modulos.png">
+				</section>
+
+				<section>
+					<video src="media/Fonsagua.wmv"></video>
+				</section>
+
+				<section>
+					<h5>Formación y transferencia tecnológica</h5>
+					<img src="media/formacion_fonsagua.png">
+				</section>
+
+			</section> <!-- /Agua Honduras -->
+
+<section> <!-- SIXHIARA -->
+	<section>
+		<h5>Proyecto SIXHIARA</h5>
+		<img src="media/sixhiara_5.jpg">
+	</section>
+
+	<section style="text-align:left; font-size:75%">
+		<p>EL proyecto SIXHIARA tiene por objetivo el fortalecimiento institucional en el ámbito de los Sistemas de Información Geográfica, de la hidrogeología y de la hidrología al equipo técnico del ARA-Norte, responsable del recurso hídrico en las cuencas de la zona norte de Mozambique.</p>
+<p>La realización de este proyecto es posible gracias a la convocatoria “Proxectos e microproxectos de cooperación para o desenvolvemento no exterior promovido polos axentes de cooperación” de la Xunta de Galicia, contando además con la cofinanciación de iCarto y ARA-Norte. El proyecto se ha desarrollado en varias fases desde 2012, encontrándose en la actualidad en la fase III de ejecución (2015-2016).</p>
+<p>El proyecto SIXHIARA, liderado por iCarto, cuenta con la colaboración de la consultora Amphos 21 en temas de hidrogeología y del Grupo de Ingeniería del Agua y del Medio Ambiente (GEAMA) como expertos en hidrología y gestión de inundaciones. Nace como proyecto complementario al proyecto PATCO ARA-Norte, liderado por la entidad pública Aguas de Galicia y financiado por la Unión Europea a través de la convocatoria Water Facility.</p>
+	</section>
+
+	<section style="text-align:left;font-size:75%">
+		<ul>
+			<li>Diseño e implementación de una aplicación SIG adaptada a los requisitos del ARA-Norte: gvSIG-SIXHIARA. Permite una gestión más eficaz del recurso hídrico por parte de los técnicos locales.</li>
+			<li>Aplicación no-SIG con mapas para la gestión de "Utentes"</li>
+			<li>Diseño del modelo hidrogeológico e implementación de una red de monitoreo de los acuíferos del contorno de la ciudad de Pemba.</li>
+			<li>Estudio de inundaciones de las cuencas hidrográficas internas de Cabo Delgado.</li>
+			<li>Inventariado, delimitación y mapeado de recursos hídricos, zonas de protección, usuarios demandantes de agua y zonas inundables.</li>
+			<li>Capacitación a los técnicos del ARA-Norte para la realización de los estudios técnicos.</li>
+			<li>Realización de capacitaciones en Sistemas de Información Geográfica.</li>
+			<li>Actividades de difusión del trabajo del ARA-norte y de los resultados del proyecto.</li>
+		</ul>
+	</section>
+
+	<section>
+		<img src="media/sixhiara_1.png">
+	</section>
+	<section>
+		<img src="media/sixhiara_2.png">
+	</section>
+	<section>
+		<img src="media/sixhiara_3.png">
+	</section>
+	<section>
+		<img src="media/sixhiara_4.png">
+	</section>
+
+	<section>
+		<img src="media/sixhiara_6.png">
+		<p class="sourcecite"><a href="http://www.ara-norte.co.mz/visor-sia">Visor SIA</a></p>
+	</section>
+</section>
+
+<section>
+	<h3>GIS y Cooperación al Desarrollo</h3>
+	<p>(26 de Mayo de 2016)</p>
+	<p class="sourcecite"><a href="https://fpuga.github.io/Curso_GIS_Cooperacion_EGAP_20160526">https://fpuga.github.io/Curso_GIS_Cooperacion_EGAP_20160526</a></p>
+	<div style="font-size:75%; color:grey; margin:250px 0px 0px 0px; margin-left:0px; text-align:left !important; width:45%">
+		<hr color="grey">
+		Francisco Puga
+		<br><a href="https://twitter.com/fpuga">@fpuga</a> - francisco.puga@isf.es
+		<br><br>Ingeniería Sin Fronteras Galicia
+		<br><a href="https://twitter.com/ESFGALICIA">@ESFGALICIA</a> - info@galicia.isf.es
+		<div>
+</section>
+
+
+		</div> <!-- slides -->
+	</div> <!-- reveal -->
+
+	<script src="../reveal.js-3.3.0/lib/js/head.min.js"></script>
+	<script src="../reveal.js-3.3.0/js/reveal.js"></script>
+
+	<script>
+		Reveal.initialize({
+			history: true,
+			// Transition style
+			transition: 'default', // none/fade/slide/convex/concave/zoom
+			// Transition speed
+			transitionSpeed: 'default', // default/fast/slow
+			// Transition style for full page slide backgrounds
+			backgroundTransition: 'default', // none/fade/slide/convex/concave/zoom
+
+			dependencies: [
+				{ src: '../reveal.js-3.3.0/plugin/markdown/marked.js' },
+				{ src: '../reveal.js-3.3.0/plugin/markdown/markdown.js' },
+				{ src: '../reveal.js-3.3.0/plugin/notes/notes.js', async: true },
+				{ src: '../reveal.js-3.3.0/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+			]
+		});
+	</script>
+</body>
+</html>
