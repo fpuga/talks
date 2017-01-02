@@ -107,12 +107,12 @@ Reveal.initialize({
 
     dependencies: [
         // Zoom in and out with Alt+click
-        { src: 'reveal.js-3.3.0/plugin/zoom-js/zoom.js', async: true },
+        { src: '../reveal.js-3.3.0/plugin/zoom-js/zoom.js', async: true },
 
         // Speaker notes
-        { src: 'reveal.js-3.3.0/plugin/notes/notes.js', async: true },
+        { src: '../reveal.js-3.3.0/plugin/notes/notes.js', async: true },
 
         // external html files -- https://github.com/calevans/external
-        { src: 'external/external/external.js', condition: function() { return !!document.querySelector( '[data-external]' ); } },
+        { src: '../external/external/external.js', condition: function() { return !!document.querySelector( '[data-external]' ); } },
     ]
 });
