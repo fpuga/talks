@@ -6,5 +6,9 @@
 
 [Introducción a PostGIS. GPUL_Labs. 20170629](https://fpuga.github.io/talks/GPUL_Labs_20170629_PostGIS/)
 
+[Introducción a PostGIS. GPUL_Labs. 20170629](https://fpuga.github.io/talks/GPUL_Labs_20170629_PostGIS/)
+
+[Cosas que mola saber antes de empezar a programar (en Python)](https://fpuga.github.io/talks/cosas_saber_empezar_programar_python/). 2022.
+
 
 
