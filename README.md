@@ -10,6 +10,4 @@
 
 [Cosas que mola saber antes de empezar a programar (en Python)](https://fpuga.github.io/talks/cosas_saber_empezar_programar_python/). 2022.
 
-
-[De WordPress a MkDocs](https://fpuga.github.io/talks/de_wordpress_a_mkdocs/). 2024.
-
+[De WordPress a MkDocs](https://fpuga.github.io/talks/de_wordpress_a_mkdocs/). 2024 y 2025.

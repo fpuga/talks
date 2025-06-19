@@ -2,6 +2,27 @@
 
 ## Cómo y Porqué
 
+???
+
+Esta charla se titula de "De WordPress a MkDocs, cómo y porqué", sobre todo "porqué"
+
+### Changelog
+
+-   2024-10. [Charla pre PyConES 2024](https://aindustriosa.org/PyCon2024_2/)
+-   2025-06. [Charla Python Vigo](https://www.python-vigo.es/posts/reunion-junio-2025/)
+
+---
+
+fpuga
+
+fpuga@icarto.es
+
+![logo iCarto](./images/190798_logotipo-icarto-normal.png)
+
+--
+
+![SO's Flair](ttps://stackexchange.com/users/flair/892239.png?theme=clean)
+
 ---
 
 ## License
@@ -14,17 +35,15 @@ Media could have their own trademarks and licenses.
 
 ---
 
-fpuga
-
-fpuga@icarto.es
-
-![logo iCarto](./images/190798_logotipo-icarto-normal.png)
-
----
-
 -   ¿Quién tiene un blog?
 -   ¿Con WordPress?
 -   ¿Con Python? ¿Con qué tecnología?
+
+???
+
+¿Alguien escribe "prosa" regularmente?
+
+¿Hacéis desarrollo y no escribís de forma habitual?. Documentación, tickets, mails, todo eso es escribir.
 
 ---
 
@@ -36,8 +55,24 @@ fpuga@icarto.es
 -   Aprovecho estos talleres para aprender y cerrar cosas que empiezo y nunca termino
 -   Aporto la perspectiva de quien quiere empezar a pelearse con algo.
 -   Pero no sólo desde el punto de vista tecnológico. Si quieres un tutorial RTFM. Cualquier software bueno tiene una documentación buena
--   Me gusta explicar el porqué de las decisiones, y los trucos y WTF que no saltan a primera vista
+-   Me gusta explicar el porqué de las decisiones, los trucos y los WTF que no saltan a primera vista
 -   Esto va de mis casos de uso. No digo que esta forma de trabajar es la mejor, si no que a mi me va bien
+
+--
+
+## Show me the code
+
+-   https://github.com/fpuga/talks/tree/gh-pages/de_wordpress_a_mkdocs
+-   https://github.com/fpuga/conocimientoabierto
+-   https://github.com/fpuga/franciscopuga.es
+
+???
+
+Mis presentaciones siguen un estilo "annotated presentation".
+
+Lo que cuento al hablar tiene un ritmo y un estilo enfocado al público en directo.
+
+A veces más valioso que la charla es la "presentación anotada". Hay enlaces bien escogidos que justifican, amplían y explican mejor que yo lo que intento contar.
 
 ---
 
@@ -52,7 +87,7 @@ El objetivo de esta charla es animar a la gente a escribir y que la tecnología 
 
 --
 
-## Cuando internet molaba
+## Cuando Internet molaba
 
 <div class="container">
 
@@ -84,15 +119,17 @@ El objetivo de esta charla es animar a la gente a escribir y que la tecnología 
 
 **Internet**, la red de redes, tenía una arquitectura distribuida y era un espacio para la **Ciudadanía**. En realidad era tech complicada, y sólo había espacio para _hackers_.
 
+HTTP y WWW de aproximadamente 1990. WordPress es del 2003. Web 2.0 termino acuñado entre 1999 y 2004. Facebook nace en 2004. Google en el 98.
+
 Luego llegó la [Web 2.0](https://en.wikipedia.org/wiki/Web_2.0) (con WordPress a la cabeza), y cualquier muggle podía ser un [prosumidor](https://en.wikipedia.org/wiki/Prosumer) ¿alguien recuerda el término?.
 
-Y luego llegó la [burbuja de las puntocom](https://es.wikipedia.org/wiki/Burbuja_puntocom), y Google, Amazon, Facebook, Twitter, TikTok, ... y nos dimos cuenta de que [nosotras somos el producto](https://www.fabricantededinero.com/si-no-pagas-por-el-producto-tu-eres-el-producto-a-que-se-refiere/).
+Y luego llegó la [burbuja de las puntocom en 2002](https://es.wikipedia.org/wiki/Burbuja_puntocom), y Google, Amazon, Facebook, Twitter, TikTok, ... y nos dimos cuenta de que [nosotras somos el producto](https://www.fabricantededinero.com/si-no-pagas-por-el-producto-tu-eres-el-producto-a-que-se-refiere/).
 
 Y todo pasó muy rápido, e internet será distribuida pero la Web es centralizada y las Plataformas (red social es un mal término) la controlan.
 
 Tener nuestro propio servidor de correo ya es imposible, pero los Blogs y el RSS no nos los pueden quitar.
 
-Tener un blog es casi un acto subversivo ;P
+Gente que inventasteis los complicados sistemas federados. Blog y RSS es lo subversivo en 2025 ;P
 
 --
 
@@ -118,9 +155,26 @@ Si algo es para mi importante en esta charla es esto. Escribid. Escribid bien. E
 
 Y cerrando este paréntesis, ida-de-olla, llegamos a WordPress.
 
-Un sw brutal, que democratizo el acceso a publicar en internet, y del que sólo tengo buenas palabras. Pero que no encaja en la forma en que yo escribo, y en esa filosofía KISS. Yo escribo más que nunca y publico menos que nunca.
+Un sw brutal, que democratizó el acceso a publicar en internet, y del que sólo tengo buenas palabras. Pero que no encaja en la forma en que yo escribo, y en esa filosofía KISS. Yo escribo más que nunca y publico menos que nunca.
 
 Entrar a una web, con una base de datos, mil interfaces, los bloques de Gutemberg, ... Todo eso está muy bien para cierto público. Pero no encaja con mi filosofía KISS.
+
+--
+
+## WordPress para webs de Organizaciones
+
+[Conceptos tecnológicos básicos para la contratación de una página web](https://github.com/iCarto/ikdb/blob/main/manuales/web/conceptos_tecnologicos_contratacion_web.md)
+
+???
+
+Otro paréntesis
+
+El problema muchas veces no es WordPress. Si no quien te chanta un WordPress. He visto organizaciones
+
+-   Perder la web porqué no sabían que tenían que pagar el hosting
+-   Con plantillas que metían anuncios en algunas páginas
+-   Ni idea de que es un sw, con una bd, con php, ... y hay que actualizar, ...
+-   Con miles de plugins y cosas hardcodeadas en el core para cualquier tontería
 
 ---
 
@@ -155,7 +209,7 @@ RST puede que sea superior pero Markdown es suficientemente bueno. Así que no c
 
 ## Editor
 
--   vscode + extensiones
+-   {put your IDE here} + extensiones
 
 ???
 
@@ -188,7 +242,7 @@ RST puede que sea superior pero Markdown es suficientemente bueno. Así que no c
 
 ## Base de datos de conocimiento
 
--   Ficheros con buenos nombres + vscode + MkDocs (si queremos renderizar)
+-   Ficheros con buenos nombres + {IDE} + MkDocs (si queremos renderizar)
 
 ???
 
@@ -247,6 +301,13 @@ Lo que nos deja tres opciones:
 -   Pelican
 -   Sphinx
 -   MkDocs
+
+--
+
+## Para quien quiera investigar otras opciones
+
+-   Simon Willinson about [blogs](https://simonwillison.net/2024/Dec/22/link-blog/) and [blogging](https://simonwillison.net/tags/blogging/)
+-   [Academic Pages](https://github.com/academicpages/academicpages.github.io/)
 
 --
 
@@ -323,7 +384,14 @@ Vemos un poco las funcionalidades en la propia web y comentamos el modelo de neg
 -   https://squidfunk.github.io/mkdocs-material/setup/
 -   https://squidfunk.github.io/mkdocs-material/plugins/
 
-Un par de cosas chulas por si no da tiempo
+--
+
+-   Pregunta: _¿Se puede hacer X cosa?_
+-   Respuesta: _Sí_
+
+???
+
+Si hay alguna pregunta, de si se puede hacer x cosa, la respuesta es probablemente sí.
 
 El aspecto y funcionalidad es muy configurable y sencillo de cambiar.
 
@@ -333,7 +401,13 @@ El aspecto y funcionalidad es muy configurable y sencillo de cambiar.
 -   Varios idiomas
 -   ...
 
---
+---
+
+## Implementando MkDocs
+
+MkDocs propone una forma de trabajo que si nos encaja hace todo rápido y sencillo. Si no a través de configuración, plugins o tocando a mano, permite cualquier flujo.
+
+---
 
 -   ¿Cómo queremos desplegar?
 -   ¿Cómo organizamos el blog?
@@ -364,17 +438,11 @@ Tras ojear la documentación pensamos en cómo queremos desplegar.
 -   Despliegue en GitHub Pages con las Actions
 -   Navegación mezclada
 
---
-
-## Cómo se implementa en MkDocs
-
-MkDocs propone una forma de trabajo que si nos encaja hace todo rápido y sencillo. Si no a través de configuración, plugins o tocando a mano, permite cualquier flujo.
-
 ---
 
 ## Proyecto inicial a mano
 
-```console
+```shell
 USERNAME=fpuga
 BLOG_NAME=pruebablog
 mkdir "${BLOG_NAME}" && cd "${BLOG_NAME}" && git init
@@ -405,17 +473,6 @@ xdg-open https://"${USERNAME}".github.io/"${BLOG_NAME}"
 ???
 
 Mostrar cómo queda
-
---
-
--   Pregunta: _¿Se puede hacer X cosa?_
--   Respuesta: _Sí_
-
-???
-
-Si hay alguna pregunta, de si se puede hacer x cosa, la respuesta es probablemente sí.
-
-Vemos un ejemplo más complicado.
 
 ---
 
@@ -508,23 +565,31 @@ Pero hay varios bugs:
 
 -   https://github.com/squidfunk/mkdocs-material/issues/7574
 -   El formato WordPress no es admitido (no va el trailing slash). https://wordpress.com/support/feeds/
-
---
-
-## Comentarios
-
-???
-
-https://squidfunk.github.io/mkdocs-material/setup/adding-a-comment-system/
+-   https://github.com/fpuga/conocimientoabierto/blob/main/overrides/main.html#L37
 
 --
 
 ## Otros
 
+-   [Comentarios de visitantes](https://squidfunk.github.io/mkdocs-material/setup/adding-a-comment-system/)
 -   Programar horas de publicación
 -   Publicar tweets anunciando nuevos artículos
 -   ...
+-   rss por categoría, ...
+-   Artículos relacionados
+-   [Linkback](https://en.wikipedia.org/wiki/Linkback)
+-   [Automatizar newsletters](https://simonwillison.net/2023/Apr/4/llm/).
 
 ???
 
 Con los hooks, y las github actions podemos hacer prácticamente cualquier cosa con poco esfuerzo y programando en Python.
+
+---
+
+## Conclusiones
+
+-   Abandonad las plataformas
+-   Blogs y RSS son el pasado, el presente y el futuro
+-   Escribid. Escribid bien
+-   Opinión: No escojáis la mejor tech para cada caso. Dominad la que funcione para una mayoría de casos
+-   Local Primero. Markdown para todo
